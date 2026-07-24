@@ -1,0 +1,51 @@
+==========================================================================================================================================================================================================
+
+SOAL NOMOR 4A
+Eror ini terjadi di dalam function getUserData pada baris 15 kolom 10. 
+Eror tersebut dipicu oleh alur panggilan fungsi (call stack) yang dimulai dari function main (baris 50:2) yang memanggil processUser (baris 30:5), hingga akhirnya mengeksekusi getUserData.
+
+Eror ini menandakan bahwa variabel 'user' belum didefinsikan, yg mungkin disebabkan oleh:
+1. Belum dideklarasikan
+2. Dibatasi oleh scope
+3. Lupa dipassing sebagai argumen saat pemanggilan function
+4. Typo pada nama variabel
+
+==========================================================================================================================================================================================================
+
+SOAL NOMOR 4B
+Eror ini menandakan bahwa kode mencoba mengakses '.length' pada variabel yg menyimpan nilai null, bukan array atau string. 
+Ini biasanya terjadi ketika suatu operasi (misal pas fetch API), tidak menemukan data dan sengaja mengembalikan nilai null. 
+
+Eror ini terjadi pada function 'processData' di file data.js line 8 kolom 15. 
+- Dimulai dari fungsi utama ('main') yg memanggil fungsi 'handleRequest'. 
+- Kemudian fungsi 'handleRequest' memanggil fungsi 'processData' sehingga menyebabkan eror tersebut.
+
+==========================================================================================================================================================================================================
+
+SOAL NOMOR 4C
+Eror ini terjadi ketika ditemukan tanda kurung buka '(' di tempat yg tidak seharusnya (sesuai aturan penulisan), misal:
+1. Langsung menulis '(' tanpa didahului keyword (misal if, while, for, atau nama fungsi)
+2. Ada tanda kurung yg belum ditutup
+
+Eror ini terjadi pada file script.js pada baris ke-5
+
+==========================================================================================================================================================================================================
+
+SOAL NOMOR 4D
+Eror ini terjadi ketika mencoba mengisi (set) atau mengubah nilai properti bernama 'status' pada sebuah variabel yg belum memiliki isi (nilainya undefined), misal:
+1. Mengakses 'status' ini pada sebuah objek yg propertinya belum didefinisikan
+2. Data yg dicari (misal dalam objek atau array) tidak ditemukan, sehingga menghasilkan undefined (muncul eror ini jika kita mencoba mengakses properti 'status' pada objek ini)
+
+Eror terjadi pada fungsi updateOrder baris 18 kolom 12. 
+- Dimulai dari fungsi checkout yg memanggil processOrder. 
+- Yg kemudian memanggil fungsi updateOrder dan menyebabkan eror
+
+==========================================================================================================================================================================================================
+
+SOAL NOMOR 4E
+Eror ini terjadi akibat dari rekursi yg tidak terbatas (infinite recursion).
+Berdasarkan stacktrace, function 'recursiveFunction' memanggil dirinya sendiri berulang-ulang, sampai menyebabkan kehabisan memori call stack akibat tidak adanya kondisi berhenti.
+
+Eror ini disebabkan oleh fungsi 'recursiveFunction' pada file app.js line 10 kolom 3
+
+==========================================================================================================================================================================================================

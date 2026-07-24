@@ -6,16 +6,16 @@
 const cetakTabel = (n) => {
   if (n > 0 && !isNaN(n)) {
     for (let i = 1; i <= 10; i++) {
-      console.log(`${n} x ${i} = ${n*i}`)
+      console.log(`${n} x ${i} = ${n*i}`);
     }
   
-    return
+    return;
   }
 
-  console.log('Parameter harus bertipe data nomor dan harus nomor positif')
-  return  
-}
+  console.log("Parameter harus bertipe data nomor dan harus nomor positif");
+  return;  
+};
 
-cetakTabel('abc')
-cetakTabel(-1)
-cetakTabel(3)
+cetakTabel("abc");
+cetakTabel(-1);
+cetakTabel(3);

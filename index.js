@@ -275,3 +275,84 @@ console.log("===========================================");
   }
 })();
 console.log("===========================================");
+
+/**
+ * Task Marianus Given
+ */
+
+import given from "./tasks/given/index.js";
+
+console.log("===========================================");
+(function taskGiven() {
+  //1-a manual reduce method
+  //success
+  try {
+    const arr = [1, 2, 3, 4];
+    const reduce = given.manualReduce(arr, given.callbackReduce, 1);
+    console.log(`Success result : ${reduce}`);
+  } catch (err) {
+    console.log(err);
+  }
+  //failed
+  try {
+    const arr = 11;
+    const reduce = given.manualReduce(arr, given.callbackReduce, 1);
+    console.log(`Success result : ${reduce}`);
+  } catch (err) {
+    console.log(`Failed result : ${err}`);
+  }
+
+  //1-b manual filter method
+  //success
+  try {
+    const words = ["spray", "elite", "exuberant", "destruction", "present"];
+    const filter = given.filter(words);
+    console.log(`Success result : ${filter}`);
+  } catch (err) {
+    console.log(`Failed result : ${err}`);
+  }
+  //failed
+  try {
+    const words = ["spray", "elite"];
+    const filter = given.filter(words);
+    console.log(`Success result : ${filter}`);
+  } catch (err) {
+    console.log(`Failed result : ${err}`);
+  }
+
+  //2 cetakTabel
+  //success
+  try {
+    const number = 3;
+    given.cetakTabel(number);
+    console.log("Tabel perkalian berhasil dibuat");
+  } catch (err) {
+    console.log(`Failed result : ${err}`);
+  }
+  //failed
+  try {
+    const number = -10;
+    given.cetakTabel(number);
+    console.log("Tabel perkalian berhasil dibuat");
+  } catch (err) {
+    console.log(`\nFailed result : ${err}`);
+  }
+  //3 countArray
+  //success
+  try {
+    const arr = [2, 2, 2, 2, 2];
+    const result = given.countArray(arr);
+    console.log(`Success result: ${result}`);
+  } catch (err) {
+    console.log(`Failed result : ${err}`);
+  }
+  //failed
+  try {
+    const arr = 2;
+    const result = given.countArray(arr);
+    console.log(`Success result: ${result}`);
+  } catch (err) {
+    console.log(`Failed result : ${err}\n`);
+  }
+})();
+console.log("===========================================");

@@ -56,3 +56,4 @@ carlos.cetakTabel(5)
 
 // Fungsi countArray
 console.log(carlos.countArray[2,3,4,5,6])
+console.log("===========================================");

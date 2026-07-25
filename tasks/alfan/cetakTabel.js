@@ -4,10 +4,6 @@ export const cetakTabel = (num) => {
   }
 
   for (let i = 1; i <= 10; i++) {
-    let baris = "";
-
-    baris += `${num} x ${i} = ${num * i}`;
-
-    console.log(baris);
+    console.log(`${num} x ${i} = ${num * i}`);
   }
 };

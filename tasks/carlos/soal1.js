@@ -37,7 +37,7 @@ export const filterManual = (array, callback) => {
   for (let i = 0; i < array.length; i++) {
     const value = array[i];
     const checkCondition = callback(value, i, array);
-    if (checkCondition === true) {
+    if (checkCondition) {
       result.push(value);
     }
   }

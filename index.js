@@ -53,3 +53,6 @@ console.log(carlos.filterManual([1, 2, 3, 4, 5, 6]))
 
 // Cetak tabel perkalian
 carlos.cetakTabel(5)
+
+// Fungsi countArray
+console.log(carlos.countArray[2,3,4,5,6])

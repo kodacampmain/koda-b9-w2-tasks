@@ -5,11 +5,11 @@ export const reduceManual = (array, callback, initialValue) => {
     accumulator = callback(accumulator, currentValue, i, array);
   }
   return accumulator;
-}
+};
 
-const callbackTotal = (acc, curr) => {
-  return acc + curr
-}
+export const callbackTotal = (acc, curr) => {
+  return acc + curr;
+};
 
 /**
  * Pada built in method reduce terdapat sebuah fungsi callback sebagai argumennya,
@@ -42,11 +42,11 @@ export const filterManual = (array, callback) => {
     }
   }
   return result;
-}
+};
 
-const callbackAngkaGenap = (val) => {
+export const callbackAngkaGenap = (val) => {
   return val % 2 === 0;
-}
+};
 
 /**
  * Built in method filter() memiliki argumen callback dimana callback ini sendiri memiliki 3

@@ -1,4 +1,4 @@
-import { reduceManual, filterManual } from "./soal1.js";
+import { reduceManual, filterManual, callbackAngkaGenap, callbackTotal } from "./soal1.js";
 import { cetakTabel } from "./soal2.js";
 import { countArray } from "./soal3.js";
 
@@ -6,7 +6,9 @@ const func = {
   reduceManual,
   filterManual,
   cetakTabel,
-  countArray
-}
+  countArray,
+  callbackAngkaGenap,
+  callbackTotal
+};
 
-export default func
+export default func;

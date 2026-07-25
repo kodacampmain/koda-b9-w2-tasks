@@ -44,16 +44,16 @@ console.log("===========================================");
 /**
  * Task Carlos
  */
-import carlos from "./tasks/carlos/index.js"
+import carlos from "./tasks/carlos/index.js";
 
 console.log("===========================================");
 // Reduce filter Manual
-console.log(carlos.reduceManuel([1, 2, 3, 4, 5, 6]))
-console.log(carlos.filterManual([1, 2, 3, 4, 5, 6]))
+console.log(carlos.reduceManuel([1, 2, 3, 4, 5, 6], carlos.callbackTotal));
+console.log(carlos.filterManual([1, 2, 3, 4, 5, 6], carlos.callbackAngkaGenap));
 
 // Cetak tabel perkalian
-carlos.cetakTabel(5)
+carlos.cetakTabel(5);
 
 // Fungsi countArray
-console.log(carlos.countArray[2,3,4,5,6])
+console.log(carlos.countArray[2,3,4,5,6]);
 console.log("===========================================");

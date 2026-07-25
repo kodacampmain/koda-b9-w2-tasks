@@ -1,0 +1,22 @@
+4-a
+- Penyebab error karena variabel user tidak ada atau belum di definisikan
+- Terjadi di file app.js pada fungsi getUserData di baris 15
+- Dimana fungsi getUserData dipanggil di fungsi processUser yang ada di file yang sama pada baris ke 20 dan fungsi processUser dipanggil di fungsi main yang ada di file yang sama di baris ke 50
+
+4-b
+- Penyebab error karena variabel yang akan di ambil lengthnya bernilai null
+- Terjadi di file data.js pada fungsi processData baris ke 8
+- Dimana fungsi processData dipanggil di fungsi handleRequest yang ada di file server.js baris ke 20, kemudian fungsi handleRequest dipanggil di fungsi main di file app.js baris ke 35
+
+4-c
+- Penyebab error karena kesalahan penulisan sintaks, ada kelebihan simbol ")" 
+- Terjadi di file script.js pada baris ke 5
+
+4-d
+- Error terjadi karena ada assign value ke object tetapi variabel yang dituju tidak bertipe objek
+- Terjadi di file order.js pada funsgi updateOrder di baris 18
+- Dimana fungsi updateOrder dipanggil di fungsi processOrder yang ada di file order.js pada baris ke 35, kemudian fungsi processOrder dipanggil di fungsi checkout di file cart.js pada baris ke 50
+
+4-e
+- Error terjadi karena infinite loop
+- Infinite loop terjadi karena ada kesalahan penanganan pada saat pemanggilan recursive function sehingga kondisi selalu bernilai false dan fungsi tersebut memanggil dirinya sendiri tanpa henti

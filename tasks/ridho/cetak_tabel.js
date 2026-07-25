@@ -3,17 +3,16 @@
  * Input: n (number)
  * Output: a list of multiplication results between n and 1-10 
  */
-const cetakTabel = (n) => {
+export const cetakTabel = (n) => {
   if (n > 0 && !isNaN(n)) {
     for (let i = 1; i <= 10; i++) {
       console.log(`${n} x ${i} = ${n*i}`);
     }
   
-    return;
+    return "Berhasil mencetak tabel.";
   }
 
-  console.log("Parameter harus bertipe data nomor dan harus nomor positif");
-  return;  
+  return ("Parameter harus bertipe data nomor dan harus nomor positif");  
 };
 
 cetakTabel("abc");

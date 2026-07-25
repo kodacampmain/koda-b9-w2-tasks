@@ -24,4 +24,4 @@ export const manualReduce = (arr, callback, initialValue) => {
   return accumulator;
 };
 
-console.log(manualReduce([1,2,3,4,5], (acc, curr) => acc + curr));
+// console.log(manualReduce([1,2,3,4,5], (acc, curr) => acc + curr));

@@ -1,4 +1,7 @@
 export const reduceManual = (array, callback, initialValue) => {
+  if (!Array.isArray(array)) {
+    throw new Error("Parameter harus berupa array");
+  }
   let accumulator = initialValue;
   for (let i = 0; i < array.length; i++) {
     const currentValue = array[i];
@@ -33,6 +36,10 @@ export const callbackTotal = (acc, curr) => {
 
 export const filterManual = (array, callback) => {
   const result = [];
+
+  if (!Array.isArray(array)) {
+    throw new Error("Parameter harus berupa array");
+  }
 
   for (let i = 0; i < array.length; i++) {
     const value = array[i];

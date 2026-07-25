@@ -44,16 +44,54 @@ console.log("===========================================");
 /**
  * Task Carlos
  */
+
 import carlos from "./tasks/carlos/index.js";
 
 console.log("===========================================");
-// Reduce filter Manual
-console.log(carlos.reduceManuel([1, 2, 3, 4, 5, 6], carlos.callbackTotal));
-console.log(carlos.filterManual([1, 2, 3, 4, 5, 6], carlos.callbackAngkaGenap));
-
-// Cetak tabel perkalian
-carlos.cetakTabel(5);
-
-// Fungsi countArray
-console.log(carlos.countArray[2,3,4,5,6]);
+// USE IIFE here
+(function taskCarlos() {
+  // Reduce Manual
+  try {
+    const reduce = carlos.reduceManuel([1, 2, 3, 4, 5, 6], carlos.callbackTotal);
+    console.log(reduce);
+  } catch (error) {
+    console.log(error.message);
+  }
+  // Filter Manual
+  try {
+    const filter = carlos.filterManual([1, 2, 3, 4, 5, 6], carlos.callbackAngkaGenap);
+    console.log(filter);
+  } catch (error) {
+    console.log(error.message);
+  }
+  // Cetak tabel perkalian
+  // Success
+  try {
+    const perkalian = carlos.cetakTabel(5);
+    console.log(perkalian);
+  } catch (error) {
+    console.log(error.message);
+  }
+  // Failed
+  try {
+    const perkalian = carlos.cetakTabel("abc");
+    console.log(perkalian);
+  } catch (error) {
+    console.log(error.message);
+  }
+  // Failed
+  try {
+    const perkalian = carlos.cetakTabel(-1);
+    console.log(perkalian);
+  } catch (error) {
+    console.log(error.message);
+  }
+  // Count Array
+  try {
+    const count = carlos.countArray([2, 3, 4, 5, 6]);;
+    console.log(count);
+  } catch (error) {
+    console.log(error.message);
+  }
+})();
 console.log("===========================================");

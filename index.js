@@ -45,8 +45,11 @@ console.log("===========================================");
  * Task Carlos
  */
 import carlos from "./tasks/carlos/index.js"
+
 console.log("===========================================");
 // Reduce filter Manual
 console.log(carlos.reduceManuel([1, 2, 3, 4, 5, 6]))
 console.log(carlos.filterManual([1, 2, 3, 4, 5, 6]))
-// 
+
+// Cetak tabel perkalian
+carlos.cetakTabel(5)

@@ -217,7 +217,7 @@ console.log("===========================================");
   // Failed
   try {
     console.log("Manual Reduce (Failed)");
-    const manualReduce = ridho.manualReduce([], (acc, curr) => acc + curr);
+    const manualReduce = ridho.manualReduce("a", (acc, curr) => acc + curr);
     console.log(manualReduce);
   } catch (e) {
     console.log(e.message);
@@ -234,7 +234,7 @@ console.log("===========================================");
   // Failed
   try {
     console.log("Manual Filter (Failed)");
-    const manualFilter = ridho.manualFilter([], (num) => num > 3);
+    const manualFilter = ridho.manualFilter("a", (num) => num > 3);
     console.log(manualFilter);
   } catch (e) {
     console.log(e.message);

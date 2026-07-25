@@ -1,4 +1,7 @@
 export const manualReduce = (arr, callback, initialValue) => {
+  if (!Array.isArray(arr)) {
+    throw new Error("Parameter harus berupa array");
+  }
   // Variabel accumulator disini merupakan penampung hasil dari penggabungan (reduce) untuk tiap elemen pada array
   // Variabel accumulator, diinisialisasi dengan men-set valuenya sama dengan initialValue
   let accumulator = initialValue;

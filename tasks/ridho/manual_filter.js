@@ -1,4 +1,8 @@
 export const manualFilter = (arr, callback, ) => {
+  if (!Array.isArray(arr)) {
+    throw new Error("Parameter harus berupa array");
+  }
+
   // Declare variabel result sebagai array penampung hasil filter, dan berfungsi sebagai nilai yg di-return
   const result = [];
   // Variabel ini merupakan indeks untuk array 'result' (incremented jika callback/filternya true)

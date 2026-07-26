@@ -9,9 +9,6 @@ function filter(arr, callback) { // menerima parameter array dan callback
     }
   }
 
-  if (result.length === 0) { // mengembalikan pesan error jika tidak ada elemen dalam array yang sesuai ketentuan di callbackFilter(lebih dari 6 huruf)
-    throw new Error("Kata dengan huruf lebih dari 6 tidak ditemukan");
-  }
   console.log("\n-----Manual Filter-----\n");
   return result;
 }
@@ -24,4 +21,4 @@ function callbackFilter(ele) { // memmbuat callbackFilter yang menerima paramete
   return ;
 }
 
-console.log(filter(words, callbackFilter))
+

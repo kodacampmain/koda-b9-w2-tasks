@@ -12,7 +12,7 @@ export const customFilter = (arrs, callback) => {
   for (let i = 0; i < arrs.length; i++) {
     // membuat pengkondisian untuk mengambil nilai truthy dari callback
     if (callback(arrs[i], i)) {
-      // jika calback dengan argument n,i bernilai true maka result di tambah (push) dengan nilai n
+       // jika calback dengan argument arrs[i] bernilai true maka result di tambah (push) dengan nilai arrs[i]
       result.push(arrs[i]);
     }
   }

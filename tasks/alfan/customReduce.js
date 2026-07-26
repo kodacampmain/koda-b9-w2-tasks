@@ -10,7 +10,7 @@ export const customReduce = (arrs, callback, initVal) => {
   }
 
   // membuat loop untuk mengisi result
-  for (let i = 0; i < arrs.length; i++) {
+  for (let i = initVal !== undefined ? 0 : 1; i < arrs.length; i++) {
     // result = return dari callback
     result = callback(result, arrs[i]);
   }

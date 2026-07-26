@@ -1,0 +1,40 @@
+1. Uncaught ReferenceError: user is not defined 
+        at getUserData (app.js:15:10)       // error terjadi di file app.js pada function getUserData (baris 15)
+        at processUser (app.js:30:5)    // function getUserData di panggil di function processUser (baris 30)
+        at main (app.js:50:2)       // lalu function processUser di panggil di function main (baris 50)
+
+Uncaught ReferenceError terjadi ketika sebuah variable di gunakan tanpa di definisikan terlebih dahulu
+error disebabkan karena variable user yang digunakan tidak di definisikan terlebih dahulu
+
+
+2. TypeError: Cannot read properties of null (reading 'length')
+        at processData (data.js: 8:15)          // error terjadi di file data.js pada function processData(baris 8)
+        at handleRequest (server.js:20:5)   // function processData di panggil di file server.js function handleRequest(baris 20)
+        at main (app.js:35:2)           // function handleRequest di panggil di file app.js function main(baris 35)
+
+TypeError terjadi ketika sebuah operasi tidak dapat dilakukan
+error disebabkan karena mencoba membaca properti length di sebuah varibael yang nilainya null/kosong
+
+
+3. SyntaxError: Unexpected token ')'
+        at script.js:5      //error terjadi di file script.js(baris 5)
+
+SyntaxError terjadi ketika sebuah penulisan kode tidak sesuai
+error disebabkan karena kurangnya tanda kurung tutup yang di butuhkan di dalam kode
+
+
+4. TypeError: Cannot set properties of undefined (setting 'status')
+        at updateOrder (order.js:18:12)         // error terjadi di file order.js pada function updateOrder
+        at processorder (order.js:35:5)     // function updateOrder di panggil di file yang sama dalam function processorder
+        at checkout (cart.js:50:2)      // function processorder di panggil di file cart.js dalam function checkout
+
+TypeError terjadi ketika sebuah operasi tidak dapat dilakukan
+error terjadi karena mencoba mengatur properti status pada sesuatu yang bernilai undefined
+
+5. RangeError: Maximum call stack size exceeded
+        at recursiveFunction (app.js:10:3)      // error terjadi di file app.js pada function recursiveFunction(baris 10)
+        at recursiveFunction (app.js:10:3)  // function recursiveFunction memanggil dirinya sendiri berulang kali di file dan baris yang sama
+        at recursiveFunction (app.js:10:3)
+
+RangeError terjadi ketika sebuah nilai melewati batas nilai yang di izinkan
+error terjadi karena fungsi recursiveFunction memanggil dirinya sendiri berkali kali sampai melampaui maximal ukuran stack 

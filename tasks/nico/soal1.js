@@ -9,34 +9,36 @@ export function reduceImplementation(arr, callback, initVal){
     /**
      *reduce mempunyai fungsi callback sebagai argumennya, yang dimana fungsi callback itu sendiri mempunyai 4 parameter(previousValue, currentValue, currentIndex, array) yang akan dimasukkan sesuai kebutuhan disaat fungsi utama dipanggil.  
     */
-    let tempMax = initVal; // berfungsi sebagai accumulator yang dimana menyimpan hasil dari operasi sebelumnya. tempMax ini menerima initValue yang diberikan
-    let initIndex = 0;//berfungsi terhadap perulangan yaitu index dimulai dari nilai berapa, untuk nilai awal sesuai method reduce yaitu 0
+    let acc; // berfungsi sebagai accumulator yang dimana menyimpan hasil dari operasi sebelumnya.
 
     /**
-     * jadi sifat reduce ini ketika kita tidak memberikan initVal, maka tempMax(accumulator) akan mengambil nilai index[0] pertama dan initIndex akan dimulai dari index 1, karena elemen pertama sudah dipakai oleh si tempMax. Sebaliknya, jika kita memberikan nilai initVal, maka tempMax akan menerima nilai awal berupa nilai dari initVal dan initIndex dimulai dari index pertama.
+     * jadi sifat reduce ini ketika kita tidak memberikan initVal, maka acc(accumulator) akan mengambil nilai index ke-0 dan index perulangan akan dimulai dari index 1, karena elemen pertama sudah dipakai oleh si acc. Sebaliknya, jika kita memberikan nilai initVal, maka acc akan menerima nilai awal berupa nilai dari initVal dan index dimulai dari 0.
      */
-    if(tempMax === undefined){
-        tempMax = arr[0];
-        initIndex = 1;
+    //validasi langsung ke initVal, sebelum assign ke acc
+    if(!initVal){
+        acc = arr[0];
+    }else{
+        acc = initVal;
     }
 
-    // perulangan dimulai dari initIndex sampai akhir array
-    for(let i = initIndex; i < arr.length; i++){
-        tempMax = callback(tempMax, arr[i]);
-        //tiap iterasi, callback dipanggil. Disini saya hanya pakai 2 argumen yang dibutuhkan yaitu tempMax dan arr[i] sebagai elemen saat ini. Hasil return callback akan menimpa tempMax dan begitu seterusnya sampai seluruh iterasi.
+    //!initVal? 1 : 0 -> implementasi ternary ekspresi -> apakah initVal falsy ? 'YA = 1' : 'NO = 0'
+    // >> berfungsi terhadap perulangan yaitu index dimulai dari nilai berapa sesuai kondisi initVal.
+    for(let i = !initVal? 1 : 0; i < arr.length; i++){
+        acc = callback(acc, arr[i]);
+        //tiap iterasi, callback dipanggil. Disini saya hanya pakai 2 argumen yang dibutuhkan yaitu acc dan arr[i] sebagai elemen saat ini. Hasil return callback akan menimpa acc dan begitu seterusnya sampai seluruh iterasi.
     }
 
-    return tempMax; 
-    //tempMax yang mempunyai hasil akhir akumulasi, dikembalikan sebagai output dari fungsi
+    return acc; 
+    //acc yang mempunyai hasil akhir akumulasi, dikembalikan sebagai output dari fungsi
 }
 
 //Fungsi Callback
-export const getMaxVal = (tempMax, current) => {
-    return current > tempMax ? current : tempMax;
+export const getMaxVal = (acc, current) => {
+    return current > acc ? current : acc;
 };
 /**
- * tempMax(previousValue), current(currentValue)
- * proses: jika current lebih besar dari tempMax, maka kembalikan nilai current sebagai nilai maximal sementara(tempMax). Kalau tidak, maka kembalikan nilai dari tempMax.
+ * acc(previousValue), current(currentValue)
+ * proses: jika current lebih besar dari acc, maka kembalikan nilai current sebagai nilai maximal sementara(acc). Kalau tidak, maka kembalikan nilai dari acc.
  */
 
 // ================================================

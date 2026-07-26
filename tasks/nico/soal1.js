@@ -10,20 +10,22 @@ export function reduceImplementation(arr, callback, initVal){
      *reduce mempunyai fungsi callback sebagai argumennya, yang dimana fungsi callback itu sendiri mempunyai 4 parameter(previousValue, currentValue, currentIndex, array) yang akan dimasukkan sesuai kebutuhan disaat fungsi utama dipanggil.  
     */
     let acc; // berfungsi sebagai accumulator yang dimana menyimpan hasil dari operasi sebelumnya.
+    let startIndex;
 
     /**
      * jadi sifat reduce ini ketika kita tidak memberikan initVal, maka acc(accumulator) akan mengambil nilai index ke-0 dan index perulangan akan dimulai dari index 1, karena elemen pertama sudah dipakai oleh si acc. Sebaliknya, jika kita memberikan nilai initVal, maka acc akan menerima nilai awal berupa nilai dari initVal dan index dimulai dari 0.
      */
-    //validasi langsung ke initVal, sebelum assign ke acc
+    //validasi langsung ke initVal, sebelum assign ke acc. Apakah iniVal falsy
     if(!initVal){
         acc = arr[0];
+        start = 1 // pemakaian initIndex = 0 diawal memang sedikit berulang secara assign value. Jadi saya letakkan didalam block if agar start  dapat memiliki nilai ketika terdapat kondisi yang sesuai. Saya tadinya memang agak bingung apakah assign nilai dengan kondisi langsung diindex dengan ternary atau tidak, sedangkan kondisi yang saya lakukan sama dengan block if diatas. Tapi ini dapat menjadi pelajaran dalam menentukan agar tidak mengulang logika yang sama.
     }else{
         acc = initVal;
+        start = 0
     }
 
-    //!initVal? 1 : 0 -> implementasi ternary ekspresi -> apakah initVal falsy ? 'YA = 1' : 'NO = 0'
-    // >> berfungsi terhadap perulangan yaitu index dimulai dari nilai berapa sesuai kondisi initVal.
-    for(let i = !initVal? 1 : 0; i < arr.length; i++){
+    // start berfungsi terhadap perulangan yaitu index dimulai dari nilai berapa sesuai kondisi initVal.
+    for(let i = start; i < arr.length; i++){
         acc = callback(acc, arr[i]);
         //tiap iterasi, callback dipanggil. Disini saya hanya pakai 2 argumen yang dibutuhkan yaitu acc dan arr[i] sebagai elemen saat ini. Hasil return callback akan menimpa acc dan begitu seterusnya sampai seluruh iterasi.
     }

@@ -1,26 +1,42 @@
-function filterManual(arr) {
-  // fungsi filter angka ganjil dalam array
-  const number = []; // array kosong untuk menampung angka ganjil
-  for (let i = 0; i < arr.length; i++) {
-    // lakukan perulangan mulai dari index 0 sampai index terakhir array
-    const element = arr[i]; // mengambil nilai array dari index ke-i
-    if (element % 2 !== 0) {
-      // jika nilai modulus 2 = 0 (adalah angka ganjil)
+function filterManual(arr, callback) {
+  // fungsi filter yang bekerja seperti Array.filter()
+  const result = []; // array untuk menampung hasil filter
 
-      number.push(element); // tambahkan element arr ke variabel number
+  for (let i = 0; i < arr.length; i++) {
+    // mengambil nilai array pada index ke-i
+    const element = arr[i];
+
+    // jika callback mengembalikan true,
+    // maka element dimasukkan ke array hasil
+    if (callback(element, i, arr)) {
+      result.push(element);
     }
   }
-  return number; // kembalikan array yg berisi angka ganjil
+
+  // mengembalikan array hasil filter
+  return result;
 }
 
-function reduceManual(array) {
-  //fungsi menjumlahkan angka dalam array
-  let result = 0; // variabel kosong untuk menampung hasil akumulasi
-  for (let a = 0; a < array.length; a++) {
-    // lakukan perulangan mulai index 0 sampai index terakhir array
-    result = result + array[a]; // menambahkan nilai array pada index ke a ke dalam result
+function reduceManual(array, callback, initialValue) {
+  // menentukan nilai awal accumulator
+  let accumulator = initialValue;
+  let startIndex = 0;
+
+  // jika initialValue tidak diberikan,
+  // gunakan element pertama sebagai accumulator
+  if (initialValue === undefined) {
+    accumulator = array[0];
+    startIndex = 1;
   }
-  return result; // kembalikan hasil penjumlahan seluruh element dalam array
+
+  // lakukan perulangan mulai dari startIndex
+  for (let i = startIndex; i < array.length; i++) {
+    // hasil callback menjadi accumulator berikutnya
+    accumulator = callback(accumulator, array[i], i, array);
+  }
+
+  // mengembalikan hasil akhir
+  return accumulator;
 }
 
 export { filterManual, reduceManual };

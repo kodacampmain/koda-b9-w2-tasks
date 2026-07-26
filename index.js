@@ -306,15 +306,15 @@ console.log("===========================================");
   //success
   try {
     const words = ["spray", "elite", "exuberant", "destruction", "present"];
-    const filter = given.filter(words);
+    const filter = given.filter(words, given.callbackFilter);
     console.log(`Success result : ${filter}`);
   } catch (err) {
     console.log(`Failed result : ${err}`);
   }
   //failed
   try {
-    const words = ["spray", "elite"];
-    const filter = given.filter(words);
+    const words = "present";
+    const filter = given.filter(words, given.callbackFilter);
     console.log(`Success result : ${filter}`);
   } catch (err) {
     console.log(`Failed result : ${err}`);

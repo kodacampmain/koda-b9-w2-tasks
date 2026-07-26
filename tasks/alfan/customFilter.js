@@ -10,13 +10,10 @@ export const customFilter = (arrs, callback) => {
 
   // membuat loop untuk mengambil masing masing nilai yang ada di dalam array
   for (let i = 0; i < arrs.length; i++) {
-    // membuat variable n untuk mengambil nilai dari masing masing array
-    const n = arrs[i];
-
     // membuat pengkondisian untuk mengambil nilai truthy dari callback
-    if (callback(n, i)) {
+    if (callback(arrs[i], i)) {
       // jika calback dengan argument n,i bernilai true maka result di tambah (push) dengan nilai n
-      result.push(n);
+      result.push(arrs[i]);
     }
   }
 

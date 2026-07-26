@@ -1,4 +1,4 @@
-function filter(arr, callback) { // menerima parameter array dan callback
+export function filter(arr, callback) { // menerima parameter array dan callback
   if (!Array.isArray(arr)) { // mengecek apakah input benar array
     throw new Error("Input harus berupa array");
   }
@@ -13,7 +13,7 @@ function filter(arr, callback) { // menerima parameter array dan callback
   return result;
 }
 
-function callbackFilter(ele) { // memmbuat callbackFilter yang menerima parameter elemen
+export function callbackFilter(ele) { // memmbuat callbackFilter yang menerima parameter elemen
   const check = ele.length; // membuat variabel check yang mengambil panjang dari elemen
   if (check > 6) { // mengecek panjang dari elememen
     return ele; // mengembalikan elemen yang sudah sesaui

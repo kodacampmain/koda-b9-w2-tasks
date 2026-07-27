@@ -1,0 +1,18 @@
+a.  Uncaught ReferenceError: user is not defined
+-> Terjadinya error dikarenakan variabel user tidak ditemukan atau belum terdefinisikan.
+-> Error ini terjadi pada file app.js di fungsi getUserData line ke - 15
+
+b. TypeError: cannot read properties of null (reading: 'length')
+-> Terjadinya error dikarenakan tidak dapat mengakses property .length dari sebuah variabel yang isinya null
+-> Error ini terjadi pada file data.js di fungsi processData line ke - 8
+
+c. SyntaxError: Unexpected token ')'
+-> Terjadinya error dikarenakan kesalahan penulisan sintaks, dimana terdapat kelebihan karakter tutup kurung ')'
+-> Error ini terjadi pada file script.js line ke - 5
+
+d. TypeError: Cannot set properties of undefined (setting 'status')
+-> Terjadinya error dikarenakan adanya penggunaan properti .status pada variabel yang tidak ditemukan
+-> Error ini terjadi pada file order.js line ke - 18
+
+e. RangeError: Maximum call stack size exceeded
+-> Seperti pesan errornya 'Ukuran tumpukan panggilan maksimum terlampaui', yaitu dikarenakan adanya penumpukan proses yang berulang - ulang sehingga mengeluarkan error tersebut. Se-yang pernah kucoba, ini dikarenakan adanya pemanggilan fungsi itu sendiri didalam dirinya.

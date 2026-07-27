@@ -10,6 +10,7 @@ export function reduceImplementation(arr, callback, initVal){
      *reduce mempunyai fungsi callback sebagai argumennya, yang dimana fungsi callback itu sendiri mempunyai 4 parameter(previousValue, currentValue, currentIndex, array) yang akan dimasukkan sesuai kebutuhan disaat fungsi utama dipanggil.  
     */
     let acc; // berfungsi sebagai accumulator yang dimana menyimpan hasil dari operasi sebelumnya.
+    let start;
 
     /**
      * jadi sifat reduce ini ketika kita tidak memberikan initVal, maka acc(accumulator) akan mengambil nilai index ke-0 dan index perulangan akan dimulai dari index 1, karena elemen pertama sudah dipakai oleh si acc. Sebaliknya, jika kita memberikan nilai initVal, maka acc akan menerima nilai awal berupa nilai dari initVal dan index dimulai dari 0.
@@ -17,19 +18,18 @@ export function reduceImplementation(arr, callback, initVal){
     //validasi langsung ke initVal, sebelum assign ke acc. Apakah iniVal falsy
     if(!initVal){
         acc = arr[0];
-        // start berfungsi terhadap perulangan yaitu index dimulai dari nilai berapa sesuai kondisi initVal.
-        for(let i = 1; i < arr.length; i++){
-            acc = callback(acc, arr[i]);
-            //tiap iterasi, callback dipanggil. Disini saya hanya pakai 2 argumen yang dibutuhkan yaitu acc dan arr[i] sebagai elemen saat ini. Hasil return callback akan menimpa acc dan begitu seterusnya sampai seluruh iterasi.
-        }
+        start = 1;
+        
     }else{
         acc = initVal;
-        for(let i = 0; i < arr.length; i++){
-            acc = callback(acc, arr[i]);
-        }
+        start = 0;
     }
 
-    
+    // start berfungsi terhadap perulangan yaitu index dimulai dari nilai berapa sesuai kondisi initVal.
+    for(;start < arr.length; start++){
+        acc = callback(acc, arr[start]);
+        //tiap iterasi, callback dipanggil. Disini saya hanya pakai 2 argumen yang dibutuhkan yaitu acc dan arr[i] sebagai elemen saat ini. Hasil return callback akan menimpa acc dan begitu seterusnya sampai seluruh iterasi.
+    }
 
     return acc; 
     //acc yang mempunyai hasil akhir akumulasi, dikembalikan sebagai output dari fungsi

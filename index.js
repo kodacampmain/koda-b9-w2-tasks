@@ -367,21 +367,75 @@ console.log("===========================================");
 
 // gunakan IIFE 
 (function taskRama() {
-  const number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
   // Task 1 - Filter Manual
-  // callback mengembalikan true jika angka ganjil
-  console.log(rama.filterManual(number, (item) => item % 2 !== 0));
+  //sukses 
+  try { //
+     const number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+     console.log(rama.filterManual(number, (item) => item % 2 !== 0));
+  } catch (error) {
+    console.log(error.message)
+  }
+  //failed
+  try { //
+     const number = "asa";
+     console.log(rama.filterManual(number, (item) => item % 2 !== 0));
+  } catch (error) {
+    console.log(error.message)
+  }
 
-  // Task 1 - Reduce Manual
-  console.log(rama.reduceManual(number,(accumulator, currentValue) => accumulator + currentValue,0));
+// Task 1 - Reduce Manual
+//sukses 
+  try { //
+    const number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    console.log(rama.reduceManual(number,(accumulator, currentValue) => accumulator + currentValue,0));
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+  //failed
+  try { //
+     const number = "asa";
+     console.log(rama.reduceManual(number,(accumulator, currentValue) => accumulator + currentValue,0));
+  } catch (error) {
+    console.log(error.message)
+  }
 
-  // Task 2 - Cetak tabel perkalian
-  rama.cetakTabel(7);
+
+
+// Task 2 - Cetak tabel perkalian
+//sukses 
+  try { //
+    rama.cetakTabel(7);
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+  //failed
+  try { //
+    rama.cetakTabel("string");
+  } catch (error) {
+    console.log(error.message)
+  }
+
+  
 
   // Task 3 - Perkalian seluruh elemen array
-  const nilai = [1, 3, 5, 7, 9];
+  //sukses 
+  try { //
+    const nilai = [1, 3, 5, 7, 9];
   console.log(rama.countArray(nilai));
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+  //failed
+  try { //
+   const nilai = "Abc";
+  console.log(rama.countArray(nilai));
+  } catch (error) {
+    console.log(error.message)
+  }
+  
 })();
 
 console.log("===========================================");

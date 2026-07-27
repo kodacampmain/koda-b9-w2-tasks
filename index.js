@@ -440,3 +440,100 @@ console.log("===========================================");
 
 console.log("===========================================");
 
+
+/**
+ * Task Nico Fernando Hondo
+ */
+
+// Import Disini
+import nico from "./tasks/nico/index.js";
+console.log("===========================================");
+//use IIFEE here
+(function taskNico(){
+  //Fungsi Reduce Manual
+  //Success
+  try{
+    console.log("1. Manual Reduce");
+    const data = [1,7,3,4,5]
+    const getReduceImp = nico.reduceImplementation(data, nico.getMaxVal, data[0]);
+    // const getReduceManual = nico.reduceImplementation(data, nico.getMaxVal); -> Bisa tanpa initVal
+    console.log("Sukses: ", getReduceImp);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Failed
+  try{
+    console.log("1. Manual Reduce");
+    const data = "abc"
+    const getReduceImp = nico.reduceImplementation(data, nico.getMaxVal, data[0]);
+    // const getReduceManual = nico.reduceImplementation(data, nico.getMaxVal); -> Bisa tanpa initVal
+    console.log("Sukses: ", getReduceImp);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Fungsi Filter Manual
+  //Success
+  try{
+    console.log("1. Manual Filter");
+    const data = [1,2,3,4,5]
+    const getFilterImp = nico.filterImplementation(data, nico.getEvenVal);
+    console.log("Sukses: ", getFilterImp);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Failed
+  try{
+    console.log("1. Manual Filter");
+    const data = 2
+    const getFilterImp = nico.filterImplementation(data, nico.getEvenVal);
+    console.log("Sukses: ", getFilterImp);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Fungsi Cetak Tebal
+  //Success
+  try{
+    console.log("");
+    console.log("2. Cetak Tabel");
+    const getCetakTabel = nico.cetakTabel(3);
+    console.log("Sukses: ", getCetakTabel);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Failed
+  try{
+    console.log("2. Cetak Tabel");
+    const getCetakTabel = nico.cetakTabel("abc");
+    console.log("Sukses: ", getCetakTabel);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Failed
+  try{
+    console.log("2. Cetak Tabel");
+    const getCetakTabel = nico.cetakTabel(-1);
+    console.log("Sukses: ", getCetakTabel);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Fungsi Count Array
+  //Success
+  try{
+    const data = [1,2,3,4,5];
+    console.log("");
+    console.log("3. Cetak Count Array");
+    const getCountArray = nico.countArray(data);
+    console.log("Sukses: ", getCountArray);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+  //Failed
+  try{
+    const data = "abc";
+    console.log("3. Cetak Count Array");
+    const getCountArray = nico.countArray(data);
+    console.log("Sukses: ", getCountArray);
+  }catch(err){
+    console.log(`Gagal: ${err.message}`);
+  }
+})()

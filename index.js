@@ -358,6 +358,90 @@ console.log("===========================================");
 console.log("===========================================");
 
 /**
+ * Task Rama
+ */
+
+import rama from "./tasks/rama/index.js";
+
+console.log("===========================================");
+
+// gunakan IIFE 
+(function taskRama() {
+  // Task 1 - Filter Manual
+  //sukses 
+  try { //
+     const number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+     console.log(rama.filterManual(number, (item) => item % 2 !== 0));
+  } catch (error) {
+    console.log(error.message)
+  }
+  //failed
+  try { //
+     const number = "asa";
+     console.log(rama.filterManual(number, (item) => item % 2 !== 0));
+  } catch (error) {
+    console.log(error.message)
+  }
+
+// Task 1 - Reduce Manual
+//sukses 
+  try { //
+    const number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    console.log(rama.reduceManual(number,(accumulator, currentValue) => accumulator + currentValue,0));
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+  //failed
+  try { //
+     const number = "asa";
+     console.log(rama.reduceManual(number,(accumulator, currentValue) => accumulator + currentValue,0));
+  } catch (error) {
+    console.log(error.message)
+  }
+
+
+
+// Task 2 - Cetak tabel perkalian
+//sukses 
+  try { //
+    rama.cetakTabel(7);
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+  //failed
+  try { //
+    rama.cetakTabel("string");
+  } catch (error) {
+    console.log(error.message)
+  }
+
+  
+
+  // Task 3 - Perkalian seluruh elemen array
+  //sukses 
+  try { //
+    const nilai = [1, 3, 5, 7, 9];
+  console.log(rama.countArray(nilai));
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+  //failed
+  try { //
+   const nilai = "Abc";
+  console.log(rama.countArray(nilai));
+  } catch (error) {
+    console.log(error.message)
+  }
+  
+})();
+
+console.log("===========================================");
+
+
+/**
  * Task Nico Fernando Hondo
  */
 

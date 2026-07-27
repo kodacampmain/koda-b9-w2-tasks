@@ -1,6 +1,13 @@
 function filterManual(arr, callback) {
   // fungsi filter yang bekerja seperti Array.filter()
-  const result = []; // array untuk menampung hasil filter
+  const result = []; // array untuk menampung hasil filter 
+
+  //Perkondisian untuk cek apakah input berupa array
+  // handling error input nilai harus berupa array
+  if (!Array.isArray(arr)) {
+    
+    throw new Error("Input harus array") 
+  }
 
   for (let i = 0; i < arr.length; i++) {
     // mengambil nilai array pada index ke-i
@@ -21,6 +28,13 @@ function reduceManual(array, callback, initialValue) {
   // menentukan nilai awal accumulator
   let accumulator = initialValue;
   let startIndex = 0;
+
+  // Perkondisian untuk cek nilai harus array
+  // Handling error input nilai harus berupa array
+  if (!Array.isArray(array)) {
+    throw new Error("nilai harus angka")
+    
+  }
 
   // jika initialValue tidak diberikan,
   // gunakan element pertama sebagai accumulator
